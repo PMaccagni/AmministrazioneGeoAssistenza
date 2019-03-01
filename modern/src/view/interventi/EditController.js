@@ -20,7 +20,6 @@ Ext.define('GeoAssistenza.view.interventi.EditController', {
         if (!this.checkDate(int_ora_inizio, int_ora_fine)) {
             return;
         }
-        dataIntervento = new Date(dataIntervento.setDate(dataIntervento.getDate() + 1));
         int_ora_inizio = new Date('2008/01/01 ' + int_ora_inizio);
         int_ora_fine = new Date('2008/01/01 ' + int_ora_fine);
         let int_ora_inizio_send = new Date(int_ora_inizio.setHours(int_ora_inizio.getHours() + 1)),
@@ -200,7 +199,11 @@ Ext.define('GeoAssistenza.view.interventi.EditController', {
         });
     },
 
-    init() {
-        this.lookup('codiceCliente').getStore().load();
+    loadClienti() {
+        this.lookup('codiceCliente').getStore().load({
+            params: {
+                ope_cod: GeoAssistenza.codiceOperatore
+            }
+        });
     }
 });

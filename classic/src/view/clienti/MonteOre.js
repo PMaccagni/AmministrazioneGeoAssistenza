@@ -53,11 +53,13 @@ Ext.define('GeoAssistenza.view.clienti.MonteOre', {
                 items: [{
                     xtype: 'datefield',
                     fieldLabel: 'Intervento dal',
-                    reference: 'dataDa'
+                    reference: 'dataDa',
+                    format: 'd/m/Y'
                 }, {
                     xtype: 'datefield',
                     fieldLabel: 'al',
-                    reference: 'dataA'
+                    reference: 'dataA',
+                    format: 'd/m/Y'
                 }]
             }, {
                 xtype: 'textfield',
@@ -77,8 +79,10 @@ Ext.define('GeoAssistenza.view.clienti.MonteOre', {
                 dataIndex: 'ope_nome',
                 flex: 1
             }, {
+                xtype: 'datecolumn',
                 text: 'Data intervento', 
                 dataIndex: 'int_data',
+                format: 'd/m/Y',
                 flex: 1
             }, {
                 text: 'Durata intervento', 

@@ -21,6 +21,7 @@ Ext.define('GeoAssistenza.view.main.Main', {
     showLogin() {
         this.on('onLoginSuccess', () => {
             this.setActiveItem(1);
+            this.down('interventi-edit').getController().loadClienti();
         });
     }
 });

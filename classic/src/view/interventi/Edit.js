@@ -4,7 +4,7 @@ Ext.define('GeoAssistenza.view.interventi.Edit', {
 
     requires: [
         'GeoAssistenza.view.interventi.EditController',
-        'GeoAssistenza.model.Clienti',
+        'GeoAssistenza.model.ClientiOperatori',
         'GeoAssistenza.model.Operatori'
     ],
 
@@ -51,7 +51,7 @@ Ext.define('GeoAssistenza.view.interventi.Edit', {
                 fieldLabel: 'Cliente',
                 reference: 'codiceCliente',
                 store: {
-                    model: 'GeoAssistenza.model.Clienti'
+                    model: 'GeoAssistenza.model.ClientiOperatori'
                 },
                 valueField: 'cli_cod',
                 displayField: 'cli_nome',
@@ -71,6 +71,7 @@ Ext.define('GeoAssistenza.view.interventi.Edit', {
                 fieldLabel: 'Data intervento',
                 reference: 'dataIntervento',
                 labelStyle: 'font-weight:bold;',
+                format: 'd/m/Y',
                 readOnly: true,
                 value: new Date()
             }, {

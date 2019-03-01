@@ -18,7 +18,7 @@ Ext.define('GeoAssistenza.view.main.Info', {
                 html: 'Versione del software: <b>1.0.0.0</b><br><br>'+
                     'Questo software è stato fatto da <b>Pietro Maccagni</b><br>' +
                     'ed è sotto licenza <b><a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank">GPL</a></b><br>' +
-                    'puoi trovare i sorgenti <b>QUI</b>'
+                    'puoi trovare i sorgenti <a href="https://github.com/PMaccagni/AmministrazioneGeoAssistenza" target="_blank">QUI</a></b>'
             }]
         }];
         this.callParent();
