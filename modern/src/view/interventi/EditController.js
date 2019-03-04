@@ -153,7 +153,6 @@ Ext.define('GeoAssistenza.view.interventi.EditController', {
     onCloseClick() {
         this.onRevertClick();
         this.lookup('codiceCliente').setReadOnly(false);
-        this.lookup('dataIntervento').setReadOnly(false);
         this.lookup('materialeIntervento').setReadOnly(false);
         this.lookup('oreDa').setReadOnly(false);
         this.lookup('oreA').setReadOnly(false);
@@ -178,11 +177,12 @@ Ext.define('GeoAssistenza.view.interventi.EditController', {
         this.lookup('oreA').resumeEvents();
         this.lookup('durataintervento').setValue(record.int_durata);
         this.lookup('codiceCliente').setReadOnly(true);
-        this.lookup('dataIntervento').setReadOnly(true);
         this.lookup('materialeIntervento').setReadOnly(true);
         this.lookup('oreDa').setReadOnly(true);
         this.lookup('oreA').setReadOnly(true);
         this.lookup('durataintervento').setReadOnly(true);
+        this.ore = record.int_ore;
+        this.minuti = record.int_minuti;
     },
 
     loadEdit(int_id) {

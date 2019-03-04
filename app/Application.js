@@ -25,7 +25,7 @@ Ext.define('GeoAssistenza.Application', {
     },
 
     onAppUpdate: function () {
-        Ext.Msg.confirm('Application Update', 'This application has an update, reload?',
+        Ext.Msg.confirm('Aggiornamento', 'Aggiornamento disponibile, applicarlo?',
             function (choice) {
                 if (choice === 'yes') {
                     window.location.reload();

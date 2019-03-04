@@ -143,6 +143,8 @@ Ext.define('GeoAssistenza.view.main.Main', {
                 this.items.items[9].tab.hide();
                 this.down('clienti-list').getController().hideButtons();
                 this.down('interventi-edit').getController().hideOperatore();
+            } else {
+                this.down('interventi-edit').getController().unlockDate();
             }
             this.down('interventi-list').getController().checkAdmin();
         })

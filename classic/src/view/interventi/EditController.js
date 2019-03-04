@@ -17,6 +17,9 @@ Ext.define('GeoAssistenza.view.interventi.EditController', {
             Ext.Msg.alert('Attenzione', 'Compilare tutti i campi');
             return;
         }
+        if (!this.lookup('dataIntervento').readOnly) {
+            dataIntervento = new Date(dataIntervento.setDate(dataIntervento.getDate() + 1));
+        }
         int_ora_inizio = new Date(int_ora_inizio.setHours(int_ora_inizio.getHours() + 1));
         int_ora_fine = new Date(int_ora_fine.setHours(int_ora_fine.getHours() + 1));
         if (!this.isAdmin(GeoAssistenza.admin)) {
@@ -92,6 +95,8 @@ Ext.define('GeoAssistenza.view.interventi.EditController', {
         this.lookup('oreA').setValue(new Date(record.int_ora_fine));
         this.lookup('oreA').resumeEvents();
         this.lookup('durataintervento').setValue(record.int_durata);
+        this.ore = record.int_ore;
+        this.minuti = record.int_minuti;
         if (!this.isAdmin(GeoAssistenza.admin)) {
             this.lookup('codiceCliente').setDisabled(true);
             this.lookup('dataIntervento').setDisabled(true);
@@ -186,6 +191,10 @@ Ext.define('GeoAssistenza.view.interventi.EditController', {
                 store.filter('ope_cod', GeoAssistenza.codiceOperatore);
             }
         }
+    },
+
+    unlockDate() {
+        this.lookup('dataIntervento').setReadOnly(false);
     },
 
     init() {

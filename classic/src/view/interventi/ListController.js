@@ -101,8 +101,6 @@ Ext.define('GeoAssistenza.view.interventi.ListController', {
             this.lookup('codiceCliente').getStore().getProxy().setExtraParams({
                 'ope_cod': GeoAssistenza.codiceOperatore
             });
-        } else {
-            this.getView().down('toolbar').items.items[2].hide();
         }
     },
 

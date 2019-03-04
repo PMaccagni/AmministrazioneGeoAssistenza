@@ -45,7 +45,6 @@ Ext.define('GeoAssistenza.view.interventi.List', {
 
         this.items = [{
             xtype: 'form',
-            flex: 1,
             padding: '0 0 40 0',
             defaults: {
                 labelAlign: 'right'
