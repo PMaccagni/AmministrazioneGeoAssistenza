@@ -20,7 +20,7 @@ Ext.define('GeoAssistenza.view.main.Main', {
     tabBarHeaderPosition: 1,
     titleRotation: 0,
     tabRotation: 0,
-    scollable: 'y',
+    scollable: true,
 
     header: {
         layout: {
@@ -69,62 +69,73 @@ Ext.define('GeoAssistenza.view.main.Main', {
     items: [{
         title: 'Lista operatori',
         iconCls: 'fa fa-user',
+        layout: 'fit',
         items: [{
             xtype: 'operatori-list'
         }]
     }, {
         hidden: true,
+        layout: 'fit',
         items: [{
             xtype: 'operatori-edit'
         }]
     }, {
         title: 'Lista clienti',
         iconCls: 'fa fa-user',
+        layout: 'fit',
         items: [{
             xtype: 'clienti-list'
         }]
     }, {
         hidden: true,
+        layout: 'fit',
         items: [{
             xtype: 'clienti-edit'
         }]
     }, {
         title: 'Lista clienti per operatore',
         iconCls: 'fa fa-users',
+        layout: 'fit',
         items: [{
             xtype: 'clienti-operatori-list'
         }]
     }, {
         hidden: true,
+        layout: 'fit',
         items: [{
             xtype: 'clienti-operatori-edit'
         }]
     }, {
         title: 'Lista interventi',
         iconCls: 'fa fa-list-ol',
+        layout: 'fit',
         items: [{
             xtype: 'interventi-list'
         }]
     }, {
         hidden: true,
+        layout: 'fit',
         items: [{
             xtype: 'interventi-edit'
         }]
     }, {
         title: 'Monte ore clienti',
         iconCls: 'fa fa-clock-o',
+        layout: 'fit',
         items: [{
             xtype: 'monte-ore-clienti'
         }]
     }, {
         title: 'Monte ore operatori',
         iconCls: 'fa fa-clock-o',
+        layout: 'fit',
         items: [{
             xtype: 'monte-ore-operatori'
         }]
     }, {
         title: 'Info',
         iconCls: 'fa fa-info-circle',
+        layout: 'fit',
         items: [{
             xtype: 'info'
         }]

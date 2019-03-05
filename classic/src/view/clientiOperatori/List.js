@@ -14,6 +14,11 @@ Ext.define('GeoAssistenza.view.clientiOperatori.List', {
 
     editIndex: 5,
 
+    layout: {
+        type: 'vbox',
+        align: 'stretch'
+    },
+
     initComponent() {
 
         this.dockedItems = {
@@ -39,7 +44,6 @@ Ext.define('GeoAssistenza.view.clientiOperatori.List', {
 
         this.items = [{
             xtype: 'form',
-            flex: 1,
             padding: '0 0 40 0',
             defaults: {
                 labelAlign: 'right'
@@ -64,7 +68,7 @@ Ext.define('GeoAssistenza.view.clientiOperatori.List', {
             columns: [{ 
                 text: 'Codice operatore', 
                 dataIndex: 'ope_cod',
-                flex: 0.25
+                hidden: true
             }, { 
                 text: 'Nome operatore', 
                 dataIndex: 'ope_nome',
@@ -84,7 +88,7 @@ Ext.define('GeoAssistenza.view.clientiOperatori.List', {
             columns: [{ 
                 text: 'Codice cliente', 
                 dataIndex: 'cli_cod',
-                flex: 0.25
+                hidden: true
             }, { 
                 text: 'Nome cliente', 
                 dataIndex: 'cli_nome',

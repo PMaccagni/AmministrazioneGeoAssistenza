@@ -15,6 +15,11 @@ Ext.define('GeoAssistenza.view.interventi.List', {
 
     editIndex: 7,
 
+    layout: {
+        type: 'vbox',
+        align: 'stretch'
+    },
+
     initComponent() {
 
         this.dockedItems = {
@@ -90,6 +95,7 @@ Ext.define('GeoAssistenza.view.interventi.List', {
         }, {
             xtype: 'grid',
             reference: 'interventiGrid',
+            flex: 1,
             store: {
                 model: 'GeoAssistenza.model.Interventi'
             },

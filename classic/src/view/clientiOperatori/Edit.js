@@ -13,6 +13,11 @@ Ext.define('GeoAssistenza.view.clientiOperatori.Edit', {
 
     listIndex: 4,
 
+    layout: {
+        type: 'vbox',
+        align: 'stretch'
+    },
+
     initComponent() {
 
         this.dockedItems = {
@@ -38,7 +43,6 @@ Ext.define('GeoAssistenza.view.clientiOperatori.Edit', {
 
         this.items = [{
             xtype: 'form',
-            flex: 1,
             padding: '0 0 40 0',
             defaults: {
                 labelAlign: 'right'
@@ -55,10 +59,10 @@ Ext.define('GeoAssistenza.view.clientiOperatori.Edit', {
         }, {
             xtype: 'grid',
             reference: 'clientiGrid',
+            flex: 1,
             store: {
                 model: 'GeoAssistenza.model.Clienti'
             },
-
             columns: [{ 
                 text: 'Codice', 
                 dataIndex: 'cli_cod',

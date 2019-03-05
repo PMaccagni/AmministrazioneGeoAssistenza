@@ -4,11 +4,15 @@ Ext.define('GeoAssistenza.view.main.Info', {
 
     title: 'Informazioni',
 
+    layout: {
+        type: 'vbox',
+        align: 'stretch'
+    },
+
     initComponent() {
 
         this.items = [{
             xtype: 'form',
-            flex: 1,
             padding: '40 0 0 40',
             defaults: {
                 labelAlign: 'right'

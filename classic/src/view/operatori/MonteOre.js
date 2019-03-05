@@ -12,6 +12,11 @@ Ext.define('GeoAssistenza.view.operatori.MonteOre', {
 
     title: 'Monte ore operatori',
 
+    layout: {
+        type: 'vbox',
+        align: 'stretch'
+    },
+
     initComponent() {
 
         this.dockedItems = {
@@ -27,7 +32,6 @@ Ext.define('GeoAssistenza.view.operatori.MonteOre', {
 
         this.items = [{
             xtype: 'form',
-            flex: 1,
             padding: '0 0 40 0',
             defaults: {
                 labelAlign: 'right'
@@ -71,6 +75,7 @@ Ext.define('GeoAssistenza.view.operatori.MonteOre', {
         }, {
             xtype: 'grid',
             reference: 'interventiGrid',
+            flex: 1,
             store: {
                 model: 'GeoAssistenza.model.Interventi'
             },

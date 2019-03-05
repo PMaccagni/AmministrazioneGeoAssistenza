@@ -12,6 +12,11 @@ Ext.define('GeoAssistenza.view.clienti.Edit', {
 
     listIndex: 2,
 
+    layout: {
+        type: 'vbox',
+        align: 'stretch'
+    },
+
     initComponent() {
 
         this.dockedItems = {
