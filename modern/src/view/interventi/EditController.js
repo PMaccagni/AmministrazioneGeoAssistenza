@@ -1,3 +1,21 @@
+/*
+    Copyright 2018, 2019 Pietro Maccagni
+    
+    This file is part of AmministrazioneGeoAssistenza.
+
+    AmministrazioneGeoAssistenza is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    AmministrazioneGeoAssistenza is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with AmministrazioneGeoAssistenza.  If not, see <http://www.gnu.org/licenses/>.
+*/
 Ext.define('GeoAssistenza.view.interventi.EditController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.interventi-edit',
@@ -26,7 +44,7 @@ Ext.define('GeoAssistenza.view.interventi.EditController', {
             int_ora_fine_send = new Date(int_ora_fine.setHours(int_ora_fine.getHours() + 1));
         ope_cod = GeoAssistenza.codiceOperatore;
         Ext.Ajax.request({
-            url: 'server/...',
+            url: 'http://localhost:8888/Interventi/PostInterventi.php',
             params: {
                 idIntervento,
                 cli_cod,
@@ -42,7 +60,7 @@ Ext.define('GeoAssistenza.view.interventi.EditController', {
             },
             success(response, opts) {
                 if (this.checkErrors(response.responseText)) {
-                    if (idIntervento !== '' && idIntervento !== null && idIntervento !== "") {
+                    if (idIntervento !== '' && idIntervento !== null && idIntervento !== '') {
                         Ext.Msg.alert('Info', 'Intervento modificato');
                     } else {
                         Ext.Msg.alert('Info', 'Intervento inserito');
@@ -59,7 +77,7 @@ Ext.define('GeoAssistenza.view.interventi.EditController', {
             fineArray = int_ora_fine.split(':');
         if (inizioArray[0] > 23) {
             Ext.Msg.alert('Attenzione', 'Formato errato nell ora di inzio<br>Impossibile inserire ore > 23');
-            return false
+            return false;
         }
         if (inizioArray[1] > 59) {
             Ext.Msg.alert('Attenzione', 'Formato errato nell ora di inzio<br>Impossibile inserire minuti > 59');
@@ -103,7 +121,7 @@ Ext.define('GeoAssistenza.view.interventi.EditController', {
             return;
         }
         let oreA = this.lookup('oreA').getValue();
-        if (oreA !== null && oreA !== '' && oreA !== "") {
+        if (oreA !== null && oreA !== '' && oreA !== '') {
             oreA = new Date('2008/01/01 ' + oreA);
             newValue = new Date('2008/01/01 ' + newValue);
             if (newValue <= oreA) {
@@ -129,7 +147,7 @@ Ext.define('GeoAssistenza.view.interventi.EditController', {
             return;
         }
         let oreDa = this.lookup('oreDa').getValue();
-        if (oreDa !== null && oreDa !== '' && oreDa !== "") {
+        if (oreDa !== null && oreDa !== '' && oreDa !== '') {
             oreDa = new Date('2008/01/01 ' + oreDa);
             newValue = new Date('2008/01/01 ' + newValue);
             if (newValue >= oreDa) {
@@ -187,7 +205,7 @@ Ext.define('GeoAssistenza.view.interventi.EditController', {
 
     loadEdit(int_id) {
         Ext.Ajax.request({
-            url: 'server/...',
+            url: 'http://localhost:8888/Interventi/GetInterventi.php',
             params: {
                 int_id
             },

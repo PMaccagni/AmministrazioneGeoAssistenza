@@ -1,3 +1,21 @@
+/*
+    Copyright 2018, 2019 Pietro Maccagni
+    
+    This file is part of AmministrazioneGeoAssistenza.
+
+    AmministrazioneGeoAssistenza is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    AmministrazioneGeoAssistenza is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with AmministrazioneGeoAssistenza.  If not, see <http://www.gnu.org/licenses/>.
+*/
 Ext.define('GeoAssistenza.view.interventi.ListController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.interventi-list',
@@ -16,11 +34,11 @@ Ext.define('GeoAssistenza.view.interventi.ListController', {
             Ext.Msg.alert('Attenzione', 'Compilare entrambe le date');
             return;
         } else if (dataDa !== null && dataA === null) {
-            dataDa = dataDa.toISOString().substr(0, 10),
-            dataA = dataA.toISOString().substr(0, 10)
+            dataDa = dataDa.toISOString().substr(0, 10);
+            dataA = dataA.toISOString().substr(0, 10);
         }
         if (!this.isAdmin(GeoAssistenza.admin)) {
-            codiceOperatore = GeoAssistenza.codiceOperatore
+            codiceOperatore = GeoAssistenza.codiceOperatore;
         }
         store.load({
             params: {
@@ -31,7 +49,7 @@ Ext.define('GeoAssistenza.view.interventi.ListController', {
             },
             callback(records, operation, success) {
                 if (success) {
-                    if (records.length = 0) {
+                    if (records.length === 0) {
                         Ext.Msg.alert('Info', 'Nessun risultato');
                     }
                 }
@@ -45,7 +63,7 @@ Ext.define('GeoAssistenza.view.interventi.ListController', {
     },
 
     onEditClick() {
-        let grid = this.lookup('interventiGrid');
+        let grid = this.lookup('interventiGrid'),
             records = grid.getSelection();
         if (records.length > 0) {
             let int_id = records[0].get('int_id');
@@ -57,13 +75,13 @@ Ext.define('GeoAssistenza.view.interventi.ListController', {
     onDeleteClick() {
         let grid = this.lookup('interventiGrid'),
             store = grid.getStore(),
-        records = grid.getSelection();
+            records = grid.getSelection();
         if (records.length === 0) {
             Ext.Msg.alert('Attenzione', 'Selezionare un intervento');
         } else {
             let int_id = records[0].get('int_id');
             Ext.Ajax.request({
-                url: 'server/...',
+                url: 'http://localhost:8888/Interventi/DeleteInterventi.php',
                 params: {
                     int_id
                 },
