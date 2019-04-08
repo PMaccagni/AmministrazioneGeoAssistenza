@@ -28,7 +28,7 @@ Ext.define('GeoAssistenza.view.main.LoginController', {
             return;
         }
         Ext.Ajax.request({
-            url: 'http://localhost:8888/Session/GetSession.php',
+            url: 'server/Session/GetSession.php',
             params: {
                 ope_nome,
                 ope_password

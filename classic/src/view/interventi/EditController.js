@@ -46,7 +46,7 @@ Ext.define('GeoAssistenza.view.interventi.EditController', {
             ope_cod = this.lookup('codiceOperatore').getValue();
         }
         Ext.Ajax.request({
-            url: 'http://localhost:8888/Interventi/PostInterventi.php',
+            url: 'server/Interventi/PostInterventi.php',
             params: {
                 idIntervento,
                 cli_cod,
@@ -85,7 +85,7 @@ Ext.define('GeoAssistenza.view.interventi.EditController', {
 
     loadEdit(int_id) {
         Ext.Ajax.request({
-            url: 'http://localhost:8888/Interventi/GetInterventi.php',
+            url: 'server/Interventi/GetInterventi.php',
             params: {
                 int_id
             },

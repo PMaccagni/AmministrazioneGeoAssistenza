@@ -32,7 +32,7 @@ Ext.define('GeoAssistenza.view.clienti.EditController', {
             return;
         }
         Ext.Ajax.request({
-            url: 'http://localhost:8888/Clienti/PostClienti.php',
+            url: 'server/Clienti/PostClienti.php',
             params: {
                 idCliente,
                 cli_cod,
@@ -66,7 +66,7 @@ Ext.define('GeoAssistenza.view.clienti.EditController', {
 
     loadEdit(cli_id) {
         Ext.Ajax.request({
-            url: 'http://localhost:8888/Clienti/GetClienti.php',
+            url: 'server/Clienti/GetClienti.php',
             params: {
                 cli_id
             },

@@ -31,7 +31,7 @@ Ext.define('GeoAssistenza.view.operatori.EditController', {
             return;
         }
         Ext.Ajax.request({
-            url: 'http://localhost:8888/Operatori/PostOperatori.php',
+            url: 'server/Operatori/PostOperatori.php',
             params: {
                 idOperatore,
                 ope_cod,
@@ -64,7 +64,7 @@ Ext.define('GeoAssistenza.view.operatori.EditController', {
 
     loadEdit(ope_id) {
         Ext.Ajax.request({
-            url: 'http://localhost:8888/Operatori/GetOperatori.php',
+            url: 'server/Operatori/GetOperatori.php',
             params: {
                 ope_id
             },

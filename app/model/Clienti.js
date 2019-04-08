@@ -21,6 +21,6 @@ Ext.define('GeoAssistenza.model.Clienti', {
 
     proxy: {
         type: 'ajax',
-        url: 'http://localhost:8888/Clienti/GetClienti.php'
+        url: 'server/Clienti/GetClienti.php'
     }
 });

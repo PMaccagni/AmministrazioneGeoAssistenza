@@ -27,8 +27,6 @@ Ext.define('GeoAssistenza.view.main.Menu', {
         'GeoAssistenza.view.main.Info'
     ],
 
-    viewModel: 'main',
-
     defaults: {
         tab: {
             iconAlign: 'top'

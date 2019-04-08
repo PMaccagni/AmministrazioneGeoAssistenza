@@ -81,7 +81,7 @@ Ext.define('GeoAssistenza.view.interventi.ListController', {
         } else {
             let int_id = records[0].get('int_id');
             Ext.Ajax.request({
-                url: 'http://localhost:8888/Interventi/DeleteInterventi.php',
+                url: 'server/Interventi/DeleteInterventi.php',
                 params: {
                     int_id
                 },

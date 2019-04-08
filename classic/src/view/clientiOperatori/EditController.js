@@ -26,7 +26,7 @@ Ext.define('GeoAssistenza.view.clientiOperatori.EditController', {
         if (records.length > 0) {
             let cli_cod = records[0].get('cli_cod');
             Ext.Ajax.request({
-                url: 'http://localhost:8888/ClientiOperatori/PostClientiOperatori.php',
+                url: 'server/ClientiOperatori/PostClientiOperatori.php',
                 params: {
                     ope_cod: this.ope_cod,
                     cli_cod

@@ -73,7 +73,7 @@ Ext.define('GeoAssistenza.view.clienti.ListController', {
         } else {
             let cli_id = records[0].get('cli_id');
             Ext.Ajax.request({
-                url: 'http://localhost:8888/Clienti/DeleteClienti.php',
+                url: 'server/Clienti/DeleteClienti.php',
                 params: {
                     cli_id
                 },

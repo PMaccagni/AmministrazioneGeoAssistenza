@@ -63,7 +63,7 @@ Ext.define('GeoAssistenza.view.operatori.ListController', {
         } else {
             let ope_id = records[0].get('ope_id');
             Ext.Ajax.request({
-                url: 'http://localhost:8888/Operatori/DeleteOperatori.php',
+                url: 'server/Operatori/DeleteOperatori.php',
                 params: {
                     ope_id
                 },

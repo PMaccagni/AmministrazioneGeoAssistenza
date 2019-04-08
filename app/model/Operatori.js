@@ -21,6 +21,6 @@ Ext.define('GeoAssistenza.model.Operatori', {
 
     proxy: {
         type: 'ajax',
-        url: 'http://localhost:8888/Operatori/GetOperatori.php'
+        url: 'server/Operatori/GetOperatori.php'
     }
 });

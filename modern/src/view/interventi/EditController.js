@@ -44,7 +44,7 @@ Ext.define('GeoAssistenza.view.interventi.EditController', {
             int_ora_fine_send = new Date(int_ora_fine.setHours(int_ora_fine.getHours() + 1));
         ope_cod = GeoAssistenza.codiceOperatore;
         Ext.Ajax.request({
-            url: 'http://localhost:8888/Interventi/PostInterventi.php',
+            url: 'server/Interventi/PostInterventi.php',
             params: {
                 idIntervento,
                 cli_cod,
@@ -205,7 +205,7 @@ Ext.define('GeoAssistenza.view.interventi.EditController', {
 
     loadEdit(int_id) {
         Ext.Ajax.request({
-            url: 'http://localhost:8888/Interventi/GetInterventi.php',
+            url: 'server/Interventi/GetInterventi.php',
             params: {
                 int_id
             },

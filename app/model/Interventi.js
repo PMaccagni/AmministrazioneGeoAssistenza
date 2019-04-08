@@ -21,6 +21,6 @@ Ext.define('GeoAssistenza.model.Interventi', {
 
     proxy: {
         type: 'ajax',
-        url: 'http://localhost:8888/Interventi/GetInterventi.php'
+        url: 'server/Interventi/GetInterventi.php'
     }
 });
